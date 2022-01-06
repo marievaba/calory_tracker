@@ -1,9 +1,9 @@
 const ItemCtrl = (function(){
   
     const Item = function(id, name, calories){
-        this.id = id
-        this.name = name
-        this.calories = calories
+        this.id = id;
+        this.name = name;
+        this.calories = calories;
     }
 
     const data = {
@@ -24,12 +24,14 @@ const ItemCtrl = (function(){
         }
     }
 })();
-
 const UICtrl = (function(){
+    const UISelectors = {
+        itemList: '#item-list'
+    }
     return {
         populateItemList: function(items){
            
-            let html = "";
+            let html = '';
 
             items.forEach(function(item){
                 html += `<li class="collection-item" id="item-${item.id}">
@@ -40,7 +42,7 @@ const UICtrl = (function(){
                 </li>`;
             });
 
-            document.querySelector("#item-list").innerHTML = html;
+            document.querySelector(UISelectors.itemList).innerHTML = html;
         }
     }
 })();
