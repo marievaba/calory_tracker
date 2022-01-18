@@ -14,7 +14,7 @@ const StorageCtrl = (function() {
         },
         getItemsFromStorage: function() {
             let items;
-            if (localStorage.getitem('items') === null) {
+            if (localStorage.getItem('items') === null) {
                 items = [];
             } else {
                 items = JSON.parse(localStorage.getItem('items'));
@@ -114,7 +114,7 @@ const UICtrl = (function() {
             <a href="#" class="secondary-content">
             <i class="edit-item fa fa-pencil"></i>
             </a>`;
-            document.querySelector(UiSelectors.itemList).insertAdjacentElement('beforeend', li);
+            document.querySelector(UISelectors.itemList).insertAdjacentElement('beforeend', li);
         },
         clearInput: function() {
             document.querySelector(UISelectors.itemNameInput).value = '';
